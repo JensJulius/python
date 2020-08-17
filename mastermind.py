@@ -6,12 +6,10 @@
 targetList = []
 
 def createSequence(s1, s2, s3, s4):
-	targetList.append(s1, s2, s3, s4)
-
+	targetList = [s1, s2, s3, s4]
 
 createSequence("red", "blue", "green", "blue")
 print(targetList)
-
 #	Code breaker makes first guess
 
 # def

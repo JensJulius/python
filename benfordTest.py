@@ -62,16 +62,12 @@ def findFirstDigit():
     first_digit_list.append(i)
 
 # Calculate totals of every starting digit
-
-
 def calculateTotals():
   for i in first_digit_list:
     i = int(i)
     final_list[i - 1] = final_list[i - 1] + 1
 
 # Print the total amount of every starting digit
-
-
 def printTotals():
   int = 1
   total = 0
@@ -89,8 +85,6 @@ def printTotals():
   print("==========\n")
 
 # Reset lists to get ready for creating and parsing a new list.
-
-
 def resetLists():
   global li
   global first_digit_list
@@ -102,13 +96,9 @@ def resetLists():
   final_list = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 # Create the gui
-
-
 def gui():
   while True:
     resetLists()
-    #calcMethod = 0
-    #listLength = 0
     i = input("1 : Random String of integers\n2 : List of doubling numbers\n3 : Fibonacci Sequence\n4 : List of squared numbers\n5 : Exit\n\n  : ")
     i = int(i)
     if i == 1:  # 1 : Random String of integers
