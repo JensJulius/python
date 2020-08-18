@@ -1,21 +1,28 @@
 #!/bin/python3
 
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the factorial function below.
+def factorial(n):
+	x = 1
+
+	for i in range(n+1):
+		if i == 0:
+			continue
+		x = x * i
+	return x
+
 if __name__ == '__main__':
-	phoneBook = {}
-	n = int(input())
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-	for i in range(n):
-		nameAndNumber = input().rstrip().split()
-		name, number = nameAndNumber
-		phoneBook[name] = number
+    n = int(input())
 
-	print(phoneBook)
+    result = factorial(n)
 
-	while True:
-		name = input().lower()
+    fptr.write(str(result) + '\n')
 
-		if name not in phoneBook:
-			print("Not found")
-		else:
-			phoneNumber = phoneBook.get(name)
-			print(name + "=" + phoneNumber)
+    fptr.close()
