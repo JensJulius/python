@@ -1,28 +1,29 @@
 #!/bin/python3
 
-import math
-import os
-import random
-import re
-import sys
-
-# Complete the factorial function below.
-def factorial(n):
-	x = 1
-
-	for i in range(n+1):
-		if i == 0:
-			continue
-		x = x * i
-	return x
-
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+	n = int(input())
 
-    n = int(input())
+	binList = []
+	result = 1
+	prev = 0
+	consec = 1
 
-    result = factorial(n)
+	while n > 0:
+		if (n % 2) == 0:
+			binList.append(0)
+			n = int(n / 2)
+		elif (n % 2) != 0:
+			binList.append(1)
+			n = int(n / 2)
+	binList.reverse()
+	print(binList)
 
-    fptr.write(str(result) + '\n')
-
-    fptr.close()
+	for i in binList:
+		if i == 1 and i == prev:
+			result += 1
+			if result > consec:
+				consec = result
+		elif i == 0:
+			result = 1
+		prev = i
+	print(consec)
